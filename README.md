@@ -6,7 +6,7 @@ Welcome to the **Data Analysis with Python** repository. This repository is desi
 
 This repository is divided into three main sections:
 
-### 1. [Data Analysis with Python](./1_Data_Analysis_with_Python/)
+### [Data Analysis with Python](./1_Data_Analysis_with_Python/)
 Dive deep into the entire process of data analysis with Python. This section includes comprehensive video courses created by Santiago Basulto that will teach you how to:
 - Read data from various sources like CSV, SQL, and Excel.
 - Process and clean data using powerful libraries such as NumPy and Pandas.
@@ -14,13 +14,13 @@ Dive deep into the entire process of data analysis with Python. This section inc
 
 Additionally, you'll find a detailed course on Jupyter Notebooks to help you manage and run your Python code efficiently. A quick Python reference guide is also included to refresh your programming skills.
 
-### 2. [NumPy](./Numpy/)
+### [NumPy](./Numpy/)
 Learn the fundamentals of NumPy, a core library for numerical computing in Python. This section features a video course by Keith Galli that covers:
 - The basics of NumPy and how it compares to Python's built-in lists.
 - Writing code with NumPy, including indexing, reshaping, and performing applied statistics.
 - Various techniques and functions that are essential for efficient data manipulation and analysis.
 
-### 3. [Data Analysis with Python Projects](./Data_Analysis_with_Python_Projects/)
+### [Data Analysis with Python Projects](./Data_Analysis_with_Python_Projects/)
 Apply your knowledge by working on real-world projects that involve data analysis using Python. This section is designed to help you:
 - Demonstrate your understanding of key concepts in data analysis.
 - Develop practical experience by working on diverse data analysis projects.
