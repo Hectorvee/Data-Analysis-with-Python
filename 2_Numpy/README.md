@@ -1,56 +1,34 @@
-# Data Analysis with Python
+# NumPy
 
-Welcome to the **Data Analysis with Python** repository. This repository is designed to guide you through the process of mastering data analysis using Python, from the basics to more advanced concepts, with a focus on practical application through projects.
+Welcome to the NumPy section of the Data Analysis with Python repository!
 
-## Repository Structure
+## Overview
 
-This repository is divided into three main sections:
+This section contains resources and video courses focused on the NumPy library. NumPy is a fundamental package for scientific computing in Python. It provides support for arrays, matrices, and many mathematical functions to operate on these data structures efficiently.
 
-### 1. [Data Analysis with Python](./1_Data_Analysis_with_Python/)
-Dive deep into the entire process of data analysis with Python. This section includes comprehensive video courses created by Santiago Basulto that will teach you how to:
-- Read data from various sources like CSV, SQL, and Excel.
-- Process and clean data using powerful libraries such as NumPy and Pandas.
-- Visualize data using Matplotlib and Seaborn.
+## What You Will Learn
 
-Additionally, you'll find a detailed course on Jupyter Notebooks to help you manage and run your Python code efficiently. A quick Python reference guide is also included to refresh your programming skills.
+- **Basics of NumPy**: Understand the core functionality of NumPy, including array creation and manipulation.
+- **Comparison with Built-in Lists**: Learn how NumPy arrays differ from Python's built-in lists.
+- **Indexing and Reshaping**: Master how to index, slice, and reshape arrays to suit your needs.
+- **Applied Statistics**: Use NumPy for statistical operations and mathematical computations.
 
-### 2. [NumPy](./Numpy/)
-Learn the fundamentals of NumPy, a core library for numerical computing in Python. This section features a video course by Keith Galli that covers:
-- The basics of NumPy and how it compares to Python's built-in lists.
-- Writing code with NumPy, including indexing, reshaping, and performing applied statistics.
-- Various techniques and functions that are essential for efficient data manipulation and analysis.
+## Resources
 
-### 3. [Data Analysis with Python Projects](./Data_Analysis_with_Python_Projects/)
-Apply your knowledge by working on real-world projects that involve data analysis using Python. This section is designed to help you:
-- Demonstrate your understanding of key concepts in data analysis.
-- Develop practical experience by working on diverse data analysis projects.
-- Showcase your ability to handle various data sources and apply different analytical techniques.
+- **Video Course**: Learn from Keith Galli's comprehensive video course covering NumPy basics and advanced techniques.
+- **Tutorials**: Access detailed tutorials and practical examples to solidify your understanding of NumPy.
 
 ## Getting Started
 
-To get started, you can clone this repository to your local machine:
+1. **Install NumPy**: If you haven't already, you can install NumPy using pip:
+   ```bash
+   pip install numpy
+   ```
 
-```bash
-git clone https://github.com/yourusername/data-analysis-with-python.git
-cd data-analysis-with-python
-```
-
-Each section contains its own set of instructions, code examples, and resources to guide you through the learning process. We recommend starting with the **Data Analysis with Python** section to build a strong foundation before moving on to the NumPy course and finally testing your skills with the projects.
-
-## Contributing
-
-Contributions are welcome! If you have suggestions for improvements or additional resources, feel free to submit a pull request. Please ensure that your contributions align with the structure and goals of the repository.
+2. **Explore the Materials**: Navigate through the content in this folder to get started with NumPy. Each resource is designed to build your knowledge progressively.
 
 ## License
 
-This repository is licensed under the MIT License. See the [LICENSE](./LICENSE.txt) file for more details.
-
-## Acknowledgements
-
-- **Santiago Basulto** for the comprehensive data analysis video courses.
-- **Keith Galli** for the excellent NumPy tutorial.
-- The Python community for providing robust libraries and resources.
-
-Happy coding and data analyzing!
+This content is licensed under the MIT License. For more details, see the [LICENSE](../LICENSE.txt) file in the root directory of this repository.
 
 ---
