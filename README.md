@@ -6,7 +6,7 @@ Welcome to the **Data Analysis with Python** repository. This repository is desi
 
 This repository is divided into three main sections:
 
-### 1. [Data Analysis with Python](./Data_Analysis_with_Python/)
+### 1. [Data Analysis with Python](./1. Data_Analysis_with_Python/)
 Dive deep into the entire process of data analysis with Python. This section includes comprehensive video courses created by Santiago Basulto that will teach you how to:
 - Read data from various sources like CSV, SQL, and Excel.
 - Process and clean data using powerful libraries such as NumPy and Pandas.
