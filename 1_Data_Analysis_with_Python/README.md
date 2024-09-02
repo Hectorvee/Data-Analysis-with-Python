@@ -53,7 +53,7 @@ We welcome contributions! If you have suggestions or improvements, please feel f
 
 ## License
 
-This section of the repository is licensed under the MIT License. For more details, see the [LICENSE](../LICENSE) file.
+This section of the repository is licensed under the MIT License. For more details, see the [LICENSE](../LICENSE.txt) file.
 
 ## Acknowledgements
 
