@@ -23,8 +23,5 @@ print(sales['Unit_Cost'].describe()) # Display summary statistics for the 'Unit_
 print(sales['Unit_Cost'].mean()) # Calculate the mean of the 'Unit_Cost' column
 print(sales['Unit_Cost'].median()) # Calculate the median of the 'Unit_Cost' column
 
-# Histogram of the 'Unit_Cost' column
-
-
 
 
