@@ -7,10 +7,9 @@ from numpy.ma.core import arange
 # Print the numpy version and the configuration
 print(np.__version__)
 
-# Array creation
+# ---------- Array creation ----------
 print("\n---------- Array creation ----------")
 # Create a numpy array of size 10, filled with zeros.
-
 zeros_array = np.zeros(10)
 print("Numpy array of size 10, filled with zeros")
 print(zeros_array, "\n")
@@ -106,7 +105,7 @@ Z = np.zeros((4, 4))
 print("Memory size of the given Z numpy matrix")
 print(Z.nbytes, "\n")
 
-# Array indexation
+# ---------- Array indexation ----------
 print("\n---------- Array indexation ----------")
 X_array = np.arange(10)
 X_matrix = np.arange(9).reshape(3, 3)
@@ -162,7 +161,7 @@ print("First two elements on the first two rows: ", X_matrix[:2, :2], "\n")
 print("Matrix: ", X_matrix)
 print("Last two elements on the last two rows: ", X_matrix[-2:, -2:], "\n")
 
-# Array manipulation
+# ---------- Array manipulation ----------
 X_array = np.arange(10)
 X_matrix = np.arange(9).reshape(3, 3)
 print("\n---------- Array manipulation ----------")
@@ -189,43 +188,99 @@ print("Array: ", X_array)
 print("Given the X numpy array, set the fifth element equal to 1: ", X_array_new, "\n")
 
 # Given the X numpy array, change the 50 with a 40.
+X = np.array([10, 20, 30, 50])
+print("Array: ", X)
+X[X == 50] = 40
+print("Given the X numpy array, change the 50 with a 40: ", X, "\n")
 
 # Given the X numpy matrix, change the last row with all 1.
+X = np.copy(X_matrix)
+X[-1, :] = 1
+print("Matrix: ", X_matrix)
+print("Given the X numpy matrix, change the last row with all 1: ", X, "\n")
 
 # Given the X numpy matrix, change the last item on the last row with a 0.
+X = np.copy(X_matrix)
+X[-1, -1] = 0
+print("Matrix: ", X_matrix)
+print("Given the X numpy matrix, change the last item on the last row with a 0: ", X, "\n")
 
 # Given the X numpy matrix, add 5 to every element.
+X = np.copy(X_matrix)
+X += 5
+print("Matrix: ", X_matrix)
+print("Given the X numpy matrix, add 5 to every element: ", X, "\n")
 
-# Boolean arrays (also called masks)
-print("\n---------- Boolean arrays ----------")
+# ---------- Boolean arrays (also called masks) ----------
+X_array = np.random.randint(-10, 10, 10)
+print("\n---------- Boolean arrays (also called masks) ----------")
 # Given the X numpy array, make a mask showing negative elements.
+X = np.copy(X_array)
+print("Array: ", X)
+print("Given the X numpy array, make a mask showing negative elements: ", X < 0, "\n")
 
 # Given the X numpy array, get the negative elements.
+X = np.copy(X_array)
+print("Array: ", X)
+print("Given the X numpy array, get the negative elements: ", X[X < 0], "\n")
 
 # Given the X numpy array, get numbers higher than 5.
+X = np.copy(X_array)
+print("Array: ", X)
+print("Given the X numpy array, get numbers higher than 5: ", X[X > 5], "\n")
 
 # Given the X numpy array, get numbers higher than the elements mean.
+X = np.copy(X_array)
+# X_mean = np.mean(X)
+print("Array: ", X)
+print("Array mean: ", X.mean())
+print("Given the X numpy array, get numbers higher than the elements mean: ", X[X > X.mean()], "\n")
 
 # Given the X numpy array, get numbers equal to 2 or 10.
+X = np.random.randint(1, 11, 20)
+print("Array: ", X)
+print("Given the X numpy array, get numbers equal to 2 or 10: ", X[(X == 2) | (X == 10)], "\n")
 
-# Logic functions
+# ---------- Logic functions ----------
 print("\n---------- Logic functions ----------")
+X_array = np.random.randint(0, 11, 20)
 # Given the X numpy array, return True if none of its elements is zero.
+print("Array: ", X_array)
+print("Given the X numpy array, return True if none of its elements is zero: ", X_array.all(), "\n")
 
 # Given the X numpy array, return True if any of its elements is zero.
+print("Array: ", X_array)
+print("Given the X numpy array, return True if any of its elements is zero: ", X_array.any(), "\n")
 
-# Summary statistics
+# ---------- Summary statistics ----------
 print("\n---------- Summary statistics ----------")
+X_array = np.random.randint(0, 11, 10)
 # Given the X numpy array, show the sum of its elements.
+print("Array: ", X_array)
+print("Given the X numpy array, show the sum of its elements: ", X_array.sum(), "\n")
 
 # Given the X numpy array, show the mean of its elements.
+print("Array: ", X_array)
+print("Given the X numpy array, show the mean of its elements: ", X_array.mean(), "\n")
 
 # Given the X numpy array, show the max of its elements.
+print("Array: ", X_array)
+print("Given the X numpy array, show the max of its elements: ", X_array.max(), "\n")
 
 # Given the X numpy array, show the min of its elements.
+print("Array: ", X_array)
+print("Given the X numpy array, show the min of its elements: ", X_array.min(), "\n")
 
 # Given the X numpy array, show the index of the max of its elements.
+print("Array: ", X_array)
+print("Given the X numpy array, show the index of the max of its elements: ", X_array.argmax(), "\n")
 
 # Given the X numpy array, show the index of the min of its elements.
+print("Array: ", X_array)
+print("Given the X numpy array, show the index of the min of its elements: ", X_array.argmin(), "\n")
 
-# Given the 4X4 numpy array, show the array after subtracting the mean of each row.
+# Given the numpy 4x4 matrix, show the array after subtracting the mean of each row.
+X_matrix = np.random.randint(0, 11, 16).reshape(4, 4)
+print("Array: ", X_matrix)
+Y = X_matrix - X_matrix.mean(axis=1, keepdims=True) # axis=1 means row, keepdims=True means keep the dimension of the array
+print("Given the numpy 4x4 matrix, show the array after subtracting the mean of each row: ", Y, "\n")
