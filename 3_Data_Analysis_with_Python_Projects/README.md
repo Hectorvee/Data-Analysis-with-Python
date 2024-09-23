@@ -10,7 +10,7 @@ This folder contains a collection of practical projects designed to apply data a
 
 ### 1. Mean-Variance-Standard Deviation Calculator
 - **Description**: A project to compute the mean, variance, and standard deviation of a given dataset. This project is aimed at understanding basic statistical measures.
-- **Status**: Not Passed
+- **Status**: Passed
 
 ### 2. Demographic Data Analyzer
 - **Description**: Analyze demographic data to gain insights into various population statistics and trends. This project involves data cleaning and exploratory analysis.
