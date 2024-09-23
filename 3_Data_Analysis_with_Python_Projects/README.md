@@ -1,5 +1,3 @@
----
-
 # Data Analysis with Python Projects
 
 Welcome to the Data Analysis with Python Projects section of the repository!

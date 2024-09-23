@@ -65,8 +65,8 @@ f = np.array([
 ])
 print("Array f:", f)    # Print the array
 print("Sum of array f:", f.sum())    # Print the sum of the array
-print("Sum of array f along axis 0:", f.sum(axis=0))    # Print the sum of the array along axis 0
-print("Sum of array f along axis 1:", f.sum(axis=1))    # Print the sum of the array along axis 1
+print("Sum of array f along axis 0:", f.sum(axis=0))    # Print the sum of the array along axis 0 (column-wise)
+print("Sum of array f along axis 1:", f.sum(axis=1))    # Print the sum of the array along axis 1 (row-wise)
 print("Mean of array f:", f.mean())    # Print the mean of the array
 print("Mean of array f along axis 0:", f.mean(axis=0))    # Print the mean of the array along axis 0
 print("Mean of array f along axis 1:", f.mean(axis=1))    # Print the mean of the array along axis 1
