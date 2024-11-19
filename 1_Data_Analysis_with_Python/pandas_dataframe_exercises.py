@@ -74,30 +74,48 @@ print("The first and last elements:\n", marvel_df.iloc[[0, -1]], "\n")
 
 # DataFrame manipulation and operations
 # Modify the first_appearance of 'Vision' to year 1964
+marvel_df.loc["Vision", "first_appearance"] = 1964
+print("marvel_df DataFrame after modifying the first_appearance of 'Vision' to year 1964:\n", marvel_df, "\n")
 
 # Add a new column to marvel_df called 'years_since' with the years since first_appearance
+marvel_df["years_since"] = 2024 - marvel_df["first_appearance"]
+print("marvel_df DataFrame after adding the 'years_since' column:\n", marvel_df, "\n")
 
 # DataFrame boolean arrays (also called masks)
 # Make a mask showing the female characters
+print("Mask showing female characters: \n", marvel_df["gender"] == "female", "\n")
 
 # Get the male characters
+male_char = marvel_df[marvel_df["gender"] == "male"]
+print("Male characters: \n", male_char, "\n")
 
 # Get the characters with first_appearance after 1970
+print("Characters with first_appearance after 1970: \n", marvel_df[marvel_df["first_appearance"] > 1970], "\n")
 
 # Get the female characters with first_appearance after 1970
+print("Female Characters with first_appearance after 1970: \n", marvel_df[(marvel_df["first_appearance"] > 1970) & (marvel_df["gender"] == "female")], "\n")
 
 # DataFrame summary statistics
 # Show basic statistics of marvel_df
+print("Basic statistics of marvel_df: \n", marvel_df.describe(), "\n")
 
 # Show the mean value of first_appearance
+print("Mean value of first_appearance: \n", marvel_df["first_appearance"].mean(), "\n")
 
 # Show the min value of first_appearance
+print("Minimum value of first_appearance: \n", marvel_df["first_appearance"].min(), "\n")
 
 # Get the characters with the min value of first_appearance
+print("Characters with the min value of first_appearance: \n", marvel_df.iloc[marvel_df["first_appearance"].argmin()], "\n")
 
 # DataFrame basic plotting
 # Reset index names of marvel_df
+print("Reset index names of marvel_df: \n", marvel_df.reset_index(), "\n")
 
 # Plot the values of first_appearance
+marvel_df["first_appearance"].plot()
+plt.show()
 
 # Plot a histogram with values of first_appearance
+plt.hist(marvel_df["first_appearance"])
+plt.show()
