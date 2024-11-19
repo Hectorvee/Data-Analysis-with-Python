@@ -5,9 +5,9 @@ import numpy as np
 print("\n---------- Basic Pandas DataFrame ----------")
 # Create a pandas DataFrame of brics countries with their population, GDP, Surface Area, HDI, and Continent
 brics_df = pd.DataFrame({
-    'Population': [210147125, 143500000, 1252000000, 1357000000, 82673000],
-    'GDP': [2147000000000, 1860000000000, 2875000000000, 14340000000000, 350000000000],
-    'Surface Area': [8515767, 17098242, 3287590, 9596961, 1221037],
+    'Population': [210_147_125, 143_500_000, 1_252_000_000, 1_357_000_000, 82_673_000],
+    'GDP': [2_147_000_000_000, 1_860_000_000_000, 2_875_000_000_000, 14_340_000_000_000, 350_000_000_000],
+    'Surface Area': [8_515_767, 17_098_242, 3_287_590, 9_596_961, 1_221_037],
     'HDI': [0.758, 0.824, 0.645, 0.738, 0.705],
     'Continent': ['South America', 'Europe', 'Asia', 'Asia', 'Africa']
 }, index=['Brazil', 'Russia', 'India', 'China', 'South Africa']
@@ -46,5 +46,58 @@ print("Population and GDP of BRICS Countries:\n", brics_df[["Population", "GDP"]
 print("Population of Russia to China using slicing:\n", brics_df["Population"]["Russia":"China"], "\n")    # Print the population of Russia to China using slicing
 print("Population of Russia to China using loc:\n", brics_df.loc["Russia":"China", "Population"], "\n")    # Print the population of Russia to China using loc
 print("Population of Russia to China using iloc:\n", brics_df.iloc[1:4, 0], "\n")    # Print the population of Russia to China using iloc
+
+# Conditional Selection (Boolean Arrays)
+print("Population greater than 1000000000:\n", brics_df[brics_df["Population"] > 1000000000], "\n")    # Print the population greater than 1000000000
+print("Population greater than 1000000000 and HDI greater than 0.7:\n", brics_df[(brics_df["Population"] > 1000000000) & (brics_df["HDI"] > 0.7)], "\n")    # Print the population greater than 1000000000 and HDI greater than 0.7
+
+# Dropping rows and columns
+print("---------- Dropping rows and columns ----------")
+# Drop the row of South Africa
+brics_df_drop_row = brics_df.drop("South Africa")
+print("BRICS Countries DataFrame after dropping South Africa row:\n", brics_df_drop_row, "\n")    # Print the DataFrame after dropping South Africa row
+
+# Drop the column of Continent
+brics_df_drop_column = brics_df.drop("Continent", axis=1)
+print("BRICS Countries DataFrame after dropping Continent column:\n", brics_df_drop_column, "\n")    # Print the DataFrame after dropping Continent column
+
+# Operations with series work at the column level
+print("---------- Operations with series work at the column level ----------")
+crisis = pd.Series([-1_000_000, -0.3], index=["GDP", "HDI"])    # Create a series of crisis
+brics_df_crisis = brics_df[["GDP", "HDI"]] + crisis    # Add the series to the DataFrame
+print("BRICS Countries DataFrame after adding crisis series:\n", brics_df_crisis, "\n")    # Print the DataFrame after adding crisis series
+
+# Modify the DataFrames
+print("---------- Modify the DataFrames ----------")
+# Addition of new column
+langs = pd.Series(["Portuguese", "Russian", "Hindi", "Mandarin", "English"], index=["Brazil", "Russia", "India", "China", "South Africa"])    # Create a series of languages
+brics_df["Language"] = langs    # Add the series to the DataFrame
+print("BRICS Countries DataFrame after adding Language column:\n", brics_df, "\n")    # Print the DataFrame after adding Language column
+
+# Replacing values per column
+brics_df["Language"] = "English"    # Replace the values of the column with English
+print("BRICS Countries DataFrame after replacing Language column with English:\n", brics_df, "\n")    # Print the DataFrame after replacing Language column
+
+# Rename the columns
+brics_df = brics_df.rename(
+    columns={
+        "Language": "Official Language"
+    }, index={
+        "Brazil": "BR",
+        "Russia": "RU",
+        "India": "IN",
+        "China": "CN",
+        "South Africa": "SA"
+    }
+)    # Rename the columns and index of the DataFrame using rename method with columns and index parameters
+print("BRICS Countries DataFrame after renaming columns and index:\n", brics_df, "\n")    # Print the DataFrame after renaming columns and index
+
+# Creating Columns from other columns
+brics_df["GDP per capita"] = brics_df["GDP"] / brics_df["Population"]    # Create a new column GDP per capita
+print("BRICS Countries DataFrame after adding GDP per capita column:\n", brics_df, "\n")    # Print the DataFrame after adding GDP per capita column
+
+
+
+
 
 

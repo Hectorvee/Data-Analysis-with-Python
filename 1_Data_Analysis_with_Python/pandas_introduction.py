@@ -56,8 +56,6 @@ print("BRICS Population with log:\n", np.log(brics_pop))    # Take log of each e
 brics_pop["Brazil"] = 220    # Change the population of Brazil
 print("\nBRICS Population after changing population of Brazil:\n", brics_pop)    # Print the series
 
-# ---------- Basic Pandas DataFrame ----------
-
 
 
 

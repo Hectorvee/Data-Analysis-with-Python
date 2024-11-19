@@ -55,8 +55,10 @@ print(arr7, "\n")
 
 # Create a 3*3 identity numpy matrix with ones on the diagonal and zeros elsewhere.
 arr8 = np.identity(3)
+arr8_1 = np.eye(3)
 print("3*3 identity numpy matrix with ones on the diagonal and zeros elsewhere")
 print(arr8, "\n")
+print(arr8_1, "\n")
 
 # Create a numpy array, filled with 3 random integer values between 1 and 10.
 arr9 = np.random.randint(1, 11, 3)
