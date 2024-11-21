@@ -7,7 +7,7 @@ print("Pandas Version: ", pd.__version__)
 
 # ---------- Reading CSV Files ----------
 print("\n---------- Reading CSV Files ----------")
-df = pd.read_csv("data/btc-market-price.csv", header=None)
+df = pd.read_csv("data/btc-market-price.csv", header=None)  # Header=None will skip the header
 print("Dataframe df:\n", df, "\n")
 
 df.columns = ["Timestamp", "Price"]

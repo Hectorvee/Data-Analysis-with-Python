@@ -157,13 +157,91 @@ print("Series ambassadors:\n", ambassadors, "\n")
 
 # Detect duplicate values
 print("Detect duplicate values in the given ambassadors pandas Series:\n", ambassadors.duplicated(), "\n")  # This will detect the duplicate values
-print("Detect duplicate values in the given ambassadors pandas Series:\n", ambassadors.duplicated(keep='last'), "\n")   # This will detect the duplicate values and keep the last one
-print("Detect duplicate values in the given ambassadors pandas Series:\n", ambassadors.duplicated(keep=False), "\n")    # This will detect the duplicate values and mark all of them as duplicate
+print("Detect duplicate values in the given ambassadors pandas Series (Keep last):\n", ambassadors.duplicated(keep='last'), "\n")   # This will detect the duplicate values and keep the last one
+print("Detect duplicate values in the given ambassadors pandas Series (Keep false):\n", ambassadors.duplicated(keep=False), "\n")    # This will detect the duplicate values and mark all of them as duplicate
 
 # Drop duplicate values
 print("Drop duplicate values in the given ambassadors pandas Series:\n", ambassadors.drop_duplicates(), "\n")    # This will drop the duplicate values
 print("Drop duplicate values in the given ambassadors pandas Series:\n", ambassadors.drop_duplicates(keep='last'), "\n")    # This will drop the duplicate values and keep the last one
 print("Drop duplicate values in the given ambassadors pandas Series:\n", ambassadors.drop_duplicates(keep=False), "\n")    # This will drop the duplicate values and mark all of them as duplicate
+
+# Duplicate values in a DataFrame
+# Create a pandas DataFrame with the following data:
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'Diana', 'Ethan', 'Bob', 'George', 'Hannah', 'Ivy', 'Jack'],
+    'Age': [25, 30, 35, 40, 45, 30, 55, 60, 65, 70],
+    'Department': ['HR', 'Finance', 'IT', 'HR', 'IT', 'Finance', 'Finance', 'HR', 'IT', 'Finance']
+}
+
+df = pd.DataFrame(data)
+print("DataFrame df:\n", df, "\n")
+
+# Detect duplicate values in the DataFrame
+print("Detect duplicate values in the given df pandas DataFrame:\n", df.duplicated(), "\n")    # This will detect the duplicate values
+print("Detect duplicate values in the given df pandas DataFrame (Keep last):\n", df.duplicated(keep='last'), "\n")    # This will detect the duplicate values and keep the last one
+print("Detect duplicate values in the given df pandas DataFrame (Keep false):\n", df.duplicated(keep=False), "\n")    # This will detect the duplicate values and mark all of them as duplicate
+
+# Drop duplicate values in the DataFrame
+print("Drop duplicate values in the given df pandas DataFrame:\n", df.drop_duplicates(), "\n")    # This will drop the duplicate values
+print("Drop duplicate values in the given df pandas DataFrame:\n", df.drop_duplicates(keep='last'), "\n")    # This will drop the duplicate values and keep the last one
+print("Drop duplicate values in the given df pandas DataFrame:\n", df.drop_duplicates(keep=False), "\n")    # This will drop the duplicate values and mark all of them as duplicate
+
+# Text handling
+print("\n---------- Text handling ----------")
+# Cleaning text values can be incredibly hard. Invalid text values involves, 99% of the time, mistyping, which is
+# completely unpredictable and doesn't follow  pattern. Thankfully, it's not so common these days, where data-entry
+# tasks have been replaced by automated systems. But, it's still a good practice to clean text values.
+# Let's explore most common cases:
+
+# Splitting Columns
+# The result of a survey is loaded and this is what you get:
+df = pd.DataFrame({'data': ['1987_M_US_1', '1990?_M_UK_2', '1992_F_US_3', '1970?_M_   IT_1', '1985_F_I  T_2']})
+print("DataFrame df:\n", df, "\n")
+
+# Split the data column
+print("Split the data column by '_':\n", df['data'].str.split('_'), "\n") # This will split the data column by '_'
+
+# Split the data column and expand it into a DataFrame
+df = df['data'].str.split('_', expand=True)  # This will split the data column by '_' and expand it into a DataFrame
+print("Split the data column by '_' and expand it into a DataFrame:\n", df, "\n")
+
+# Rename the columns of the DataFrame
+df.columns = ['Year', 'Sex', 'Country', 'No. Children']
+print("Rename the columns of the DataFrame:\n", df, "\n")
+
+# Removing whitespaces
+df['Country'] = df['Country'].str.replace(' ', '')  # This will remove the whitespaces from the Country column in the DataFrame.
+print("Remove the whitespaces from the Country column in the DataFrame:\n", df, "\n")
+
+# Check the unique values in the Year column
+print("Unique values in the Year column:\n", df['Year'].str.contains('\?'), "\n")
+
+# Replace the '?' with ''
+df['Year'] = df['Year'].str.replace('?', '')
+print("Replace the '?' with '' in the Year column:\n", df, "\n")
+
+# Other useful methods in str object
+# The str object in pandas Series has many useful methods for text handling. Here are some of them:
+# str.lower(): Converts all characters to lowercase
+# str.upper(): Converts all characters to uppercase
+# str.len(): Computes the length of each string
+# str.strip(): Strips whitespace from the beginning and end of each string
+# str.lstrip(): Strips whitespace from the beginning of each string
+# str.rstrip(): Strips whitespace from the end of each string
+# str.split(): Splits each string with the given pattern
+# str.cat(): Concatenates strings
+# str.get_dummies(): Returns the one-hot encoded DataFrame of the strings
+# str.contains(): Returns a Boolean Series indicating whether each string contains the given pattern
+# str.replace(): Replaces a pattern with another value
+# str.extract(): Extracts the first occurrence of a pattern
+# str.extractall(): Extracts all occurrences of a pattern
+# str.count(): Counts the occurrences of a pattern
+# str.findall(): Finds all occurrences of a pattern
+# str.match(): Determines if each string matches a pattern
+# str.repeat(): Repeats each string
+# str.pad(): Pads strings in the specified width
+# str.center(): Centers strings in the specified width
+
 
 
 
